@@ -1,0 +1,313 @@
+/* FocusDNA — theme variables are injected on .stApp from ui/theme.py */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap");
+
+.stApp {
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(167, 139, 250, 0.1), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(34, 211, 238, 0.07), transparent 50%),
+    var(--bg-deep) !important;
+  color: var(--text);
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+/* Streamlit chrome — fix white header / invisible chrome */
+header[data-testid="stHeader"] {
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+[data-testid="stToolbar"] {
+  background: transparent !important;
+}
+
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+section.main {
+  background: transparent !important;
+}
+
+.block-container {
+  padding-top: 1.25rem;
+  padding-bottom: 3rem;
+  max-width: 1200px;
+}
+
+/* Main text */
+p, li, span, label,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li {
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+  color: var(--text) !important;
+  letter-spacing: -0.02em;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+  background: var(--bg-panel) !important;
+  border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span {
+  color: var(--text) !important;
+}
+
+[data-testid="stSidebarNav"] a,
+[data-testid="stSidebarNav"] span,
+[data-testid="stSidebarNavLink"] span {
+  color: var(--nav-text) !important;
+  font-weight: 500;
+}
+
+[data-testid="stSidebarNavLink"][aria-current="page"] {
+  background: var(--nav-active-bg) !important;
+  border-radius: 8px;
+}
+
+[data-testid="stSidebarNavLink"][aria-current="page"] span {
+  color: var(--nav-active-text) !important;
+  font-weight: 600;
+}
+
+/* Segmented theme control */
+[data-testid="stSidebar"] [data-baseweb="segmented-control"] {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+[data-testid="stSidebar"] [data-baseweb="segmented-control"] button {
+  color: var(--text) !important;
+}
+
+[data-testid="stSidebar"] [data-baseweb="segmented-control"] button[aria-selected="true"] {
+  background: #8b5cf6 !important;
+  color: var(--text-on-accent) !important;
+}
+
+.sidebar-brand {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.25rem 0 1.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b5cf6, #0891b2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.brand-sub,
+.sidebar-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.sidebar-note {
+  margin-top: -0.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero {
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  color: #0891b2;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem !important;
+  margin: 0 0 0.35rem !important;
+  background: linear-gradient(90deg, var(--hero-title-start), var(--hero-title-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 42rem;
+  line-height: 1.5;
+}
+
+.metric-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  min-height: 96px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.metric-value {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.metric-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+}
+
+.section-head h2 {
+  font-size: 1.35rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-top: 0;
+}
+
+.disclaimer {
+  background: var(--disclaimer-bg);
+  border: 1px solid var(--disclaimer-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: var(--disclaimer-text);
+  line-height: 1.45;
+  margin: 1rem 0;
+}
+
+.info-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.info-panel ul {
+  margin: 0.5rem 0 0.75rem 1.1rem;
+}
+
+.info-panel em {
+  color: var(--text-muted);
+}
+
+.result-success {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.result-fail {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Buttons */
+.stButton > button[kind="primary"],
+.stButton > button {
+  background: linear-gradient(135deg, #7c3aed, #0891b2) !important;
+  color: var(--text-on-accent) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 10px !important;
+  padding: 0.55rem 1.25rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.stButton > button:hover {
+  filter: brightness(1.06);
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* Inputs */
+div[data-baseweb="select"] > div,
+div[data-baseweb="input"] > div,
+[data-testid="stNumberInput"] input {
+  background-color: var(--bg-elevated) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+[data-testid="stWidgetLabel"] p,
+.stSlider label p {
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+/* Bordered containers (native panels) */
+[data-testid="stVerticalBlockBorderWrapper"] {
+  background: var(--bg-panel) !important;
+  border-color: var(--border) !important;
+  border-radius: 14px !important;
+  padding: 0.75rem 1rem !important;
+}
+
+/* Metrics & data */
+[data-testid="stMetric"] {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+[data-testid="stMetricLabel"] {
+  color: var(--text-muted) !important;
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--text) !important;
+}
+
+[data-testid="stDataFrame"] {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+footer {
+  visibility: hidden;
+}
